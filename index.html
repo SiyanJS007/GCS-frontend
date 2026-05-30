@@ -1,172 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocket Ground Control Station</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js">
-</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission Control</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>GROUND CONTROL STATION</h1>
-    <div class="mission-status">MISSION STATUS: STANDBY</div>
+<nav>
+    <h1>🚀 Ground Control Station</h1>
+
+    <div class="nav-links">
+        <a href="index.html">Mission Control</a>
+        <a href="tracking.html">Tracking & Analysis</a>
+    </div>
+</nav>
+
+<header class="status-bar">
+    MISSION STATUS: STANDBY
 </header>
 
-<div class="dashboard">
+<div class="container">
 
-    <!-- Left Column -->
-    <div class="left-column">
+    <div class="panel">
+        <h2>Telemetry Overview</h2>
 
-        <section class="panel">
-            <h2>Telemetry Overview</h2>
-            <div class="telemetry-grid">
-                <div class="card">
-                    <h3>Altitude</h3>
-                    <p>XXXX m</p>
-                </div>
+        <div class="card-grid">
 
-                <div class="card">
-                    <h3>Velocity</h3>
-                    <p>XXX m/s</p>
-                </div>
-
-                <div class="card">
-                    <h3>Acceleration</h3>
-                    <p>XX g</p>
-                </div>
-
-                <div class="card">
-                    <h3>Battery</h3>
-                    <p>XX.X V</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="panel">
-            <h2>Flight Events</h2>
-
-            <ul class="event-list">
-                <li>Launch Detection</li>
-                <li>Motor Burnout</li>
-                <li>Apogee</li>
-                <li>Parachute Deploy</li>
-                <li>Landing</li>
-            </ul>
-        </section>
-
-        <section class="panel">
-            <h2>System Health</h2>
-
-            <div class="health-item">
-                GPS Status
-                <span>LOCKED</span>
+            <div class="card">
+                <h3>Altitude</h3>
+                <p>XXXX m</p>
             </div>
 
-            <div class="health-item">
-                Telemetry Link
-                <span>CONNECTED</span>
+            <div class="card">
+                <h3>Velocity</h3>
+                <p>XXX m/s</p>
             </div>
 
-            <div class="health-item">
-                IMU
-                <span>ACTIVE</span>
+            <div class="card">
+                <h3>Acceleration</h3>
+                <p>XX g</p>
             </div>
 
-            <div class="health-item">
-                SD Logger
-                <span>READY</span>
+            <div class="card">
+                <h3>Battery</h3>
+                <p>XX.X V</p>
             </div>
-        </section>
 
+        </div>
     </div>
 
-    <!-- Center Column -->
-    <div class="center-column">
+    <div class="panel">
+        <h2>System Health</h2>
 
-        <section class="panel graph-panel">
-            <h2>Flight Graphs</h2>
+        <div class="health-item">
+            <span>GPS</span>
+            <span>LOCKED</span>
+        </div>
 
-            <div class="graph-placeholder">
-                Altitude vs Time
-            </div>
+        <div class="health-item">
+            <span>Telemetry</span>
+            <span>CONNECTED</span>
+        </div>
 
-            <div class="graph-placeholder">
-                Velocity vs Time
-            </div>
+        <div class="health-item">
+            <span>IMU</span>
+            <span>ACTIVE</span>
+        </div>
 
-            <div class="graph-placeholder">
-                Acceleration vs Time
-            </div>
-        </section>
-
-        <section class="panel map-panel">
-            <h2>GPS Tracking Map</h2>
-
-            <div class="map-placeholder">
-                MAP DISPLAY
-            </div>
-        </section>
-
+        <div class="health-item">
+            <span>SD Logger</span>
+            <span>READY</span>
+        </div>
     </div>
 
-    <!-- Right Column -->
-    <div class="right-column">
+    <div class="panel">
+        <h2>Flight Events</h2>
 
-        <section class="panel">
-            <h2>GPS Information</h2>
+        <ul class="event-list">
+            <li>Launch Detection</li>
+            <li>Motor Burnout</li>
+            <li>Apogee</li>
+            <li>Parachute Deployment</li>
+            <li>Landing</li>
+        </ul>
+    </div>
 
-            <div class="gps-item">
-                Latitude: XX.XXXX
-            </div>
+    <div class="panel">
+        <h2>Alerts</h2>
 
-            <div class="gps-item">
-                Longitude: XX.XXXX
-            </div>
+        <div class="alert green">
+            SYSTEM NOMINAL
+        </div>
 
-            <div class="gps-item">
-                Satellites: XX
-            </div>
+        <div class="alert yellow">
+            LOW BATTERY WARNING
+        </div>
 
-            <div class="gps-item">
-                Fix Type: 3D
-            </div>
-        </section>
+        <div class="alert red">
+            TELEMETRY LOSS
+        </div>
+    </div>
 
-        <section class="panel">
-            <h2>Alerts</h2>
+    <div class="panel">
+        <h2>Mission Log</h2>
 
-            <div class="alert warning">
-                LOW BATTERY WARNING
-            </div>
-
-            <div class="alert danger">
-                TELEMETRY LOSS
-            </div>
-
-            <div class="alert normal">
-                SYSTEM NOMINAL
-            </div>
-        </section>
-
-        <section class="panel">
-            <h2>Mission Log</h2>
-
-            <div class="log-window">
-                <p>[00:00] System Initialized</p>
-                <p>[00:02] GPS Locked</p>
-                <p>[00:05] Telemetry Connected</p>
-                <p>[00:10] Ready For Launch</p>
-            </div>
-        </section>
-
+        <div class="log-window">
+            <p>[00:00] System Initialized</p>
+            <p>[00:02] GPS Locked</p>
+            <p>[00:05] Telemetry Connected</p>
+            <p>[00:10] Ready For Launch</p>
+        </div>
     </div>
 
 </div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
